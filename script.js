@@ -6,8 +6,8 @@
 // ─── CONFIG ──────────────────────────────────────────────────
 const CONFIG = {
   friendName:      '[FRIEND_NAME]',          // ← Change this
-  whatsappNumber:  '91XXXXXXXXXX',           // ← Country code + number, no spaces or +
-  whatsappMessage: 'Happy Birthday [FRIEND_NAME]! 🎉🎂✨',
+  //whatsappNumber:  '91XXXXXXXXXX',           // ← Country code + number, no spaces or +
+  //whatsappMessage: 'Happy Birthday [FRIEND_NAME]! 🎉🎂✨',
 };
 
 // ─── Terminal lines ───────────────────────────────────────────
