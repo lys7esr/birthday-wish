@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="theme-color" content="#000000" />
+  <title>SECURE SYSTEM v2.4.1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Pacifico&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== HACKER SCREEN ========== -->
+  <div id="hacker-screen" class="screen active">
+    <!-- CRT scanline overlay -->
+    <div class="scanlines"></div>
+    <div class="crt-flicker"></div>
+
+    <!-- Terminal window -->
+    <div class="terminal-container">
+      <div class="terminal-header">
+        <span class="terminal-dot red"></span>
+        <span class="terminal-dot yellow"></span>
+        <span class="terminal-dot green"></span>
+        <span class="terminal-title">root@secure-sys — bash</span>
+      </div>
+      <div class="terminal-body">
+        <div id="terminal-output"></div>
+        <div class="cursor-line">
+          <span class="prompt">$&nbsp;</span>
+          <span id="current-line"></span>
+          <span class="cursor" id="cursor">█</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom status bar -->
+    <div class="status-bar">
+      <span class="status-item blink-slow">● ENCRYPTED</span>
+      <span class="status-item">SYS v2.4.1</span>
+      <span class="status-item blink-slow">● ACTIVE</span>
+    </div>
+  </div>
+
+  <!-- ========== TRANSITION GLITCH SCREEN ========== -->
+  <div id="glitch-transition" class="screen"></div>
+
+  <!-- ========== BIRTHDAY REVEAL SCREEN ========== -->
+  <div id="birthday-screen" class="screen">
+    <!-- Confetti canvas -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- Background blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <div class="birthday-container">
+
+      <!-- Header -->
+      <div class="birthday-header">
+        <div class="emoji-row top-emojis">🎊 🎈 🎂 🎈 🎊</div>
+        <h1 class="birthday-title">
+          <span class="its-text">It's</span>
+          <span class="friend-name">[FRIEND_NAME]'s</span>
+          <span class="birthday-word">Birthday!</span>
+        </h1>
+        <p class="birthday-subtitle">
+          You have been <strong>selected</strong> to wish her 😤
+        </p>
+      </div>
+
+      <!-- Photobooth strip -->
+      <div class="photobooth-wrapper">
+        <div class="photobooth-strip">
+          <div class="photo-label-top">✦ PHOTO BOOTH ✦</div>
+
+          <div class="photo-frame" style="--rot: -2.5deg; --delay: 0.1s">
+            <img src="images/photo1.jpg" alt="Memory 1" loading="lazy" />
+            <div class="photo-caption">besties forever 🫶</div>
+          </div>
+
+          <div class="photo-frame" style="--rot: 1.8deg; --delay: 0.25s">
+            <img src="images/photo2.jpg" alt="Memory 2" loading="lazy" />
+            <div class="photo-caption">chaos mode: on 😈</div>
+          </div>
+
+          <div class="photo-frame" style="--rot: -1.2deg; --delay: 0.4s">
+            <img src="images/photo3.jpg" alt="Memory 3" loading="lazy" />
+            <div class="photo-caption">iconic as always ✨</div>
+          </div>
+
+          <div class="photo-frame" style="--rot: 2.2deg; --delay: 0.55s">
+            <img src="images/photo4.jpg" alt="Memory 4" loading="lazy" />
+            <div class="photo-caption">love you loads 🥹</div>
+          </div>
+
+          <div class="photo-label-bottom">📸 memories unlocked 📸</div>
+        </div>
+      </div>
+
+      <!-- CTA Button -->
+      <div class="cta-section">
+        <button id="wish-btn" class="wish-button" onclick="handleWish()">
+          <span class="btn-text">Wish Her Now 🎉</span>
+          <div class="btn-shimmer"></div>
+        </button>
+        <p class="cta-note">don't you dare ignore this 🫵</p>
+      </div>
+
+      <!-- Footer -->
+      <div class="birthday-footer">
+        <div class="emoji-row bottom-emojis">🎁 💖 🥳 💖 🎁</div>
+        <p class="footer-text">made with 💗 just for this moment</p>
+      </div>
+    </div>
+
+    <!-- Music toggle -->
+    <button id="music-btn" class="music-toggle" onclick="toggleMusic()" aria-label="Toggle music">
+      🔇
+    </button>
+  </div>
+
+  <!-- ========== POPUP MODAL ========== -->
+  <div id="wish-popup" class="popup-overlay" role="dialog" aria-modal="true">
+    <div class="popup-box">
+      <div class="popup-emoji">😡</div>
+      <h2 class="popup-title">EXCUSE ME?!</h2>
+      <p class="popup-message">
+        Stop scrolling and go wish her <strong>RIGHT NOW!</strong><br/>
+        She's been waiting. We're watching. 👁️
+      </p>
+      <div class="popup-buttons">
+        <!--<a id="whatsapp-link" class="popup-btn primary" href="#" target="_blank" rel="noopener">
+          📲 Open WhatsApp
+        </a>-->
+        <button class="popup-btn secondary" onclick="closePopup()">
+          ok ok fine 🏃‍♂️
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
