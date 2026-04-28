@@ -1,16 +1,11 @@
-/* ============================================================
-   BIRTHDAY SURPRISE — script.js
-   Hacker sequence → Glitch → Birthday reveal
-   ============================================================ */
-
-// ─── CONFIG ──────────────────────────────────────────────────
+// CONFIG 
 const CONFIG = {
   friendName:      '[FRIEND_NAME]',          // ← Change this
   //whatsappNumber:  '91XXXXXXXXXX',           // ← Country code + number, no spaces or +
   //whatsappMessage: 'Happy Birthday [FRIEND_NAME]! 🎉🎂✨',
 };
 
-// ─── Terminal lines ───────────────────────────────────────────
+// Terminal lines 
 const TERMINAL_LINES = [
   { text: 'Initializing secure shell...', delay: 0 },
   { text: 'Establishing encrypted tunnel...', delay: 600 },
@@ -23,12 +18,12 @@ const TERMINAL_LINES = [
 const CHAR_SPEED = 28;   // ms per character
 const HOLD_AFTER = 600;  // ms pause after all lines
 
-// ─── State ───────────────────────────────────────────────────
+// State 
 let musicPlaying = false;
 let audioCtx     = null;
 let confettiAnim = null;
 
-// ─── DOM refs ─────────────────────────────────────────────────
+// DOM refs 
 const hackerScreen   = document.getElementById('hacker-screen');
 const glitchEl       = document.getElementById('glitch-transition');
 const birthdayScreen = document.getElementById('birthday-screen');
@@ -38,13 +33,13 @@ const musicBtn       = document.getElementById('music-btn');
 const wishPopup      = document.getElementById('wish-popup');
 //const waLink         = document.getElementById('whatsapp-link');
 
-// ─── Boot ─────────────────────────────────────────────────────
+//  Boot 
 window.addEventListener('DOMContentLoaded', () => {
   patchNames();
   startHackerSequence();
 });
 
-// Replace [FRIEND_NAME] tokens in DOM
+
 function patchNames() {
   document.querySelectorAll('.friend-name, .popup-title').forEach(el => {
     el.textContent = el.textContent.replace('[FRIEND_NAME]', CONFIG.friendName);
@@ -58,7 +53,7 @@ function patchNames() {
   //waLink.href = `https://wa.me/${CONFIG.whatsappNumber}?text=${msg}`;
 }
 
-// ─── HACKER SEQUENCE ─────────────────────────────────────────
+// HACKER SEQUENCE 
 function startHackerSequence() {
   let lineIndex = 0;
 
@@ -127,7 +122,7 @@ function typeCharacters(text, onDone) {
   }, CHAR_SPEED);
 }
 
-// ─── TRANSITION ───────────────────────────────────────────────
+// TRANSITION 
 function startTransition() {
   // Flash white briefly
   glitchEl.style.display = 'block';
@@ -140,7 +135,7 @@ function startTransition() {
   }, { once: true });
 }
 
-// ─── BIRTHDAY SCREEN ─────────────────────────────────────────
+// BIRTHDAY SCREEN 
 function showBirthdayScreen() {
   hackerScreen.classList.remove('active');
   hackerScreen.style.display = 'none';
@@ -163,7 +158,7 @@ function showBirthdayScreen() {
   });
 }
 
-// ─── CONFETTI ENGINE ─────────────────────────────────────────
+// CONFETTI ENGINE 
 function initConfetti() {
   const canvas  = document.getElementById('confetti-canvas');
   const ctx     = canvas.getContext('2d');
@@ -248,7 +243,7 @@ function initConfetti() {
   render();
 }
 
-// ─── WISH BUTTON ─────────────────────────────────────────────
+// WISH BUTTON 
 function handleWish() {
   wishPopup.classList.add('active');
 }
@@ -262,7 +257,7 @@ wishPopup.addEventListener('click', e => {
   if (e.target === wishPopup) closePopup();
 });
 
-// ─── MUSIC (Web Audio API tones, no external file needed) ─────
+// MUSIC (Web Audio API tones, no external file needed) 
 function toggleMusic() {
   if (!audioCtx) {
     audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -329,7 +324,7 @@ function playHappyBirthdayTones() {
   }, (totalDuration + 1.5) * 1000);
 }
 
-// ─── RESIZE handler ───────────────────────────────────────────
+// RESIZE handler 
 window.addEventListener('resize', () => {
   const canvas = document.getElementById('confetti-canvas');
   if (canvas) {

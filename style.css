@@ -1,9 +1,6 @@
-/* ============================================================
-   BIRTHDAY SURPRISE — style.css
-   Mobile-first | 9:16 optimized | Two-act design
-   ============================================================ */
 
-/* ── Reset & base ─────────────────────────────────────────── */
+
+/* Reset & base */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -47,7 +44,7 @@ body {
   touch-action: manipulation;
 }
 
-/* ── Screen system ────────────────────────────────────────── */
+/* Screen system */
 .screen {
   position: fixed;
   inset: 0;
@@ -64,9 +61,6 @@ body {
   justify-content: center;
 }
 
-/* ============================================================
-   HACKER SCREEN
-   ============================================================ */
 #hacker-screen {
   background: var(--terminal-bg);
   position: relative;
@@ -240,9 +234,6 @@ body {
   50%       { opacity: 0.2; }
 }
 
-/* ============================================================
-   GLITCH TRANSITION
-   ============================================================ */
 #glitch-transition {
   background: var(--terminal-bg);
   z-index: 100;
@@ -267,9 +258,6 @@ body {
   100% { opacity: 0; }
 }
 
-/* ============================================================
-   BIRTHDAY SCREEN
-   ============================================================ */
 #birthday-screen {
   background: linear-gradient(145deg, #fff0f8 0%, #fff8f0 40%, #f0f4ff 100%);
   overflow-y: auto;
@@ -325,7 +313,7 @@ body {
   z-index: 1;
 }
 
-/* ── Birthday container ───────────────────────────────────── */
+/* Birthday container */
 .birthday-container {
   position: relative;
   z-index: 2;
@@ -340,7 +328,7 @@ body {
   min-height: 100vh;
 }
 
-/* ── Header ───────────────────────────────────────────────── */
+/* Header */
 .birthday-header {
   text-align: center;
   animation: reveal-up 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both;
@@ -414,7 +402,7 @@ body {
   font-weight: 900;
 }
 
-/* ── Photobooth strip ─────────────────────────────────────── */
+/* Photobooth strip */
 .photobooth-wrapper {
   width: 100%;
   display: flex;
@@ -517,7 +505,7 @@ body {
   text-overflow: ellipsis;
 }
 
-/* ── CTA section ──────────────────────────────────────────── */
+/* CTA section */
 .cta-section {
   text-align: center;
   animation: reveal-up 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both;
@@ -592,7 +580,7 @@ body {
   font-style: italic;
 }
 
-/* ── Footer ───────────────────────────────────────────────── */
+/* Footer */
 .birthday-footer {
   text-align: center;
   animation: reveal-up 0.7s ease both;
@@ -608,7 +596,7 @@ body {
   font-style: italic;
 }
 
-/* ── Shared reveal animation ──────────────────────────────── */
+/* Shared reveal animation */
 @keyframes reveal-up {
   from {
     opacity: 0;
@@ -620,9 +608,6 @@ body {
   }
 }
 
-/* ============================================================
-   POPUP MODAL
-   ============================================================ */
 .popup-overlay {
   position: fixed;
   inset: 0;
@@ -733,9 +718,6 @@ body {
   font-size: 13px;
 }
 
-/* ============================================================
-   MUSIC TOGGLE
-   ============================================================ */
 .music-toggle {
   position: fixed;
   top: max(20px, env(safe-area-inset-top));
@@ -761,9 +743,6 @@ body {
 .music-toggle:active { transform: scale(0.9); }
 .music-toggle.visible { display: flex; }
 
-/* ============================================================
-   RESPONSIVE TWEAKS
-   ============================================================ */
 @media (min-width: 480px) {
   .birthday-container {
     padding-top: 32px;

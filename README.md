@@ -18,6 +18,12 @@
 
 ---
 
+## 🌐 Live Demo
+
+https://hackhimer-birthday.netlify.app/
+
+---
+
 ## 🚀 How It Works
 
 The website starts with a **hacker-style terminal animation**, builds suspense, and then transitions into a **birthday surprise screen** with photos, messages, and celebration effects. There is a music feature too:)
@@ -89,7 +95,7 @@ To enable:
 
 ## 💡 Idea Behind This
 
-Instead of sending a simple message, this project creates an **experience** — building suspense and delivering a fun, memorable surprise. This started as a prank for our friend's birthday and here it is:)
+Instead of sending a simple message, this project creates an **experience**, building suspense and delivering a fun, memorable surprise. This started as a prank for our friend's birthday and here it is:)
 
 ---
 
@@ -100,9 +106,12 @@ Instead of sending a simple message, this project creates an **experience** — 
 
 ---
 
-## 🌐 Live Demo
+## ⚠️ Disclaimer
 
-[Add your deployed link here]
+Some images in this project are sourced from external platforms (e.g., Pinterest) and are used for demonstration purposes only.
+
+All rights belong to their respective owners.
+For personal or public use, it is recommended to replace them with your own images.
 
 ---
 
